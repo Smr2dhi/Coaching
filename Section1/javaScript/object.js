@@ -54,12 +54,10 @@ const smartphone=[
 		price:3000,
 		colors:['blue','black','white']
 	}
-
-
 ];
 console.log(smartphone.length);
 
-console.log(smartphone[0]); //all vale of obj Relame
+console.log(smartphone[0]); //all value of obj Relame
 
 
 console.log(smartphone[1]); //undefined b/c only one object
@@ -69,7 +67,7 @@ console.log(smartphone.price); //cannot aceess array using .price so ans=undefin
 
 console.log(smartphone[0].colors[2]);//white
 
-console.log(smartphone[0].colors.push('pink')); //adding new color
+console.log(smartphone[0].colors.push('green')); //adding new color
 console.log(smartphone);
 
 const smartphoneList=[
@@ -89,14 +87,14 @@ const smartphoneList=[
 	{
 		brand:'Nothing',
 		model:'3a',
-		price:25000,
+		price:1000,
 		colors:['black','white','blue']
 	},
 
 	{
 		brand:'Motorola',
 		model:'h50',
-		price:21000,
+		price:1200,
 		colors:['green','blue']
 	},
 	{
@@ -104,15 +102,40 @@ const smartphoneList=[
 		model:'Z2',
 		price:15000,
 		colors:['red','blue','black']
-		
-	
 	}
 ];
+console.log("-------------Filter nad map in object----------------------");
+
+//Create an array containing all brands of smartPhone--->
+const brands = smartphoneList.map((phone)=>{
+	return phone.brand;
+});
+console.log(brands);
 
 
+//filter smartPhone price less than 3000
+const price1 = smartphoneList.filter((ph)=>{
+    return ph.price < 3000;
+});
+console.log(price1);
+
+//filter smartphone with brand Nothing
+
+const Brand1 = smartphoneList.filter((ph)=>{
+    return ph.brand ==='Nothing';
+});
+console.log(Brand1);
+console.log("--------------------");
+
+// filter smartphone having color white
+const clr= smartphoneList.filter((ph)=>{
+  return ph.colors.includes('white');
+});console.log(clr);
+console.log("--------------------");
 
 
-
-
-
-
+//create an array of all smartphone prices
+const arr=smartphoneList.map((ph)=>{
+	return ph.price;
+});
+console.log(arr);
